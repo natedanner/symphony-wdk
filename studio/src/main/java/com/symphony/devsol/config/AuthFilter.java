@@ -35,7 +35,7 @@ public class AuthFilter extends OncePerRequestFilter {
       @NonNull HttpServletResponse response,
       @NonNull FilterChain chain
   ) throws ServletException, IOException {
-    if (!request.getMethod().equals("OPTIONS")) {
+    if (!"OPTIONS".equals(request.getMethod())) {
       String authHeader = request.getHeader("Authorization");
       String managementTokenHeader = request.getHeader("X-Management-Token");
       UserClaim userClaim = new UserClaim();

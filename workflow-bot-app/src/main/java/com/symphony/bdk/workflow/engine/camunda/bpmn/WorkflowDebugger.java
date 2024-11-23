@@ -45,7 +45,7 @@ public final class WorkflowDebugger {
       byte[] content = FileUtils.readFileToByteArray(file);
       String base64Content = Base64.getEncoder().encodeToString(content);
       log.debug("File {} content: data:{};base64,{}", file.getName(), mediaType, base64Content);
-      if (mediaType.equals("text/xml")) {
+      if ("text/xml".equals(mediaType)) {
         log.debug(
             "Direct visualization on {}data:text/xml;base64,{}",
             "https://cdn.staticaly.com/gh/bpmn-io/bpmn-js-examples/master/url-viewer/index.html?url=",

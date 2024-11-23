@@ -8,6 +8,6 @@ public enum WorkflowNodeType {
   ACTIVITY_FAILED_EVENT,
   ACTIVITY_EXPIRED_EVENT,
   JOIN_ACTIVITY,
-  ACTIVITY;
+  ACTIVITY
 
 }

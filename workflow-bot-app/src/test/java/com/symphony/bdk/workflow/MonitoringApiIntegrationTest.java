@@ -454,7 +454,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[1].outputs.message", not(empty()))
         .body("nodes[1].outputs.msgId", not(empty()))
 
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -521,7 +521,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[2].outputs.message", not(empty()))
         .body("nodes[2].outputs.msgId", not(empty()))
 
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -564,7 +564,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[0].outputs.message", not(empty()))
         .body("nodes[0].outputs.msgId", not(empty()))
 
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()))
         .body("error.activityId", equalTo("testingWorkflow1SendMsg1"))
@@ -611,7 +611,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .assertThat()
         .statusCode(HttpStatus.OK.value())
         .body("nodes", hasSize(0))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -636,7 +636,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[2].workflowId", equalTo("testingWorkflow4"))
         .body("nodes[2].instanceId", not(empty()))
         .body("nodes[2].nodeId", equalTo("message-received_/continueTestingWorkflow4"))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -666,7 +666,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[3].nodeId", equalTo("script2TestingWorkflow4"))
         .body("nodes[3].type", equalTo("EXECUTE_SCRIPT"))
         .body("nodes[3].group", equalTo("ACTIVITY"))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -723,7 +723,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[3].workflowId", equalTo("testingWorkflow4"))
         .body("nodes[3].instanceId", not(empty()))
         .body("nodes[3].nodeId", equalTo("script2TestingWorkflow4"))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -742,7 +742,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[0].workflowId", equalTo("testingWorkflow4"))
         .body("nodes[0].instanceId", not(empty()))
         .body("nodes[0].nodeId", equalTo("script2TestingWorkflow4"))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -758,7 +758,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .statusCode(HttpStatus.OK.value())
 
         .body("nodes", hasSize(0))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -803,7 +803,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .statusCode(HttpStatus.OK.value())
 
         .body("nodes", hasSize(0))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -825,7 +825,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[1].workflowId", equalTo("testingWorkflow4"))
         .body("nodes[1].instanceId", not(empty()))
         .body("nodes[1].nodeId", equalTo("script1TestingWorkflow4"))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -855,7 +855,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[3].workflowId", equalTo("testingWorkflow4"))
         .body("nodes[3].instanceId", not(empty()))
         .body("nodes[3].nodeId", equalTo("script2TestingWorkflow4"))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -912,7 +912,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[3].workflowId", equalTo("testingWorkflow4"))
         .body("nodes[3].instanceId", not(empty()))
         .body("nodes[3].nodeId", equalTo("script2TestingWorkflow4"))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -934,7 +934,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .body("nodes[1].workflowId", equalTo("testingWorkflow4"))
         .body("nodes[1].instanceId", not(empty()))
         .body("nodes[1].nodeId", equalTo("script2TestingWorkflow4"))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 
@@ -950,7 +950,7 @@ class MonitoringApiIntegrationTest extends IntegrationTest {
         .statusCode(HttpStatus.OK.value())
 
         .body("nodes", hasSize(0))
-        .body("globalVariables.outputs", equalTo(Collections.EMPTY_MAP))
+        .body("globalVariables.outputs", equalTo(Collections.emptyMap()))
         .body("globalVariables.revision", equalTo(0))
         .body("globalVariables.updateTime", not(empty()));
 

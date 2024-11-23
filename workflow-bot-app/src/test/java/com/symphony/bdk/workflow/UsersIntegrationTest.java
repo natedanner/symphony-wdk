@@ -177,9 +177,8 @@ class UsersIntegrationTest extends IntegrationTest {
     ArgumentCaptor<V2UserAttributes> userUpdate = ArgumentCaptor.forClass(V2UserAttributes.class);
     verify(userService, timeout(5000)).update(any(), userUpdate.capture());
 
-    assertThat(userUpdate.getValue()).satisfies(user -> {
-      assertThat(user.getDisplayName()).isEqualTo("Changed");
-    });
+    assertThat(userUpdate.getValue()).satisfies(user ->
+      assertThat(user.getDisplayName()).isEqualTo("Changed"));
 
     assertExecuted(workflow);
   }

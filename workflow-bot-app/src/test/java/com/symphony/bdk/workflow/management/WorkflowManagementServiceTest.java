@@ -259,9 +259,8 @@ public class WorkflowManagementServiceTest {
 
   @Test
   void testSetActiveVersion_workflowNotFound() {
-    assertThatExceptionOfType(NotFoundException.class).isThrownBy(() -> {
-      workflowManagementService.setActiveVersion("notFoundWorkflowId", 1674651222294886L);
-    }).satisfies(
+    assertThatExceptionOfType(NotFoundException.class).isThrownBy(() ->
+      workflowManagementService.setActiveVersion("notFoundWorkflowId", 1674651222294886L)).satisfies(
         e -> assertThat(e.getMessage())
             .isEqualTo("Version 1674651222294886 of the workflow notFoundWorkflowId does not exist."));
   }
@@ -274,9 +273,8 @@ public class WorkflowManagementServiceTest {
     versionedWorkflow.setPublished(false);
     when(versionRepository.findByWorkflowIdAndVersion(anyString(), anyLong())).thenReturn(
         Optional.of(versionedWorkflow));
-    assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
-      workflowManagementService.setActiveVersion("inactiveWorkflow", 1674651222294886L);
-    }).satisfies(
+    assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() ->
+      workflowManagementService.setActiveVersion("inactiveWorkflow", 1674651222294886L)).satisfies(
         e -> assertThat(e.getMessage())
             .isEqualTo("Version 1674651222294886 of the workflow inactiveWorkflow is in draft mode."));
   }

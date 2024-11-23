@@ -70,7 +70,6 @@ public class WdkClient {
         }
         zipOut.closeEntry();
       }
-      zipOut.close();
 
       log.info("Bulk workflow export complete");
 

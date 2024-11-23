@@ -10,5 +10,5 @@ public class MessageReceivedEvent extends InnerEvent {
   @JsonProperty
   private String content = "";
   @JsonProperty
-  private boolean requiresBotMention = false;
+  private boolean requiresBotMention;
 }

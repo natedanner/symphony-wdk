@@ -28,10 +28,10 @@ public class WdkFilter extends OncePerRequestFilter {
     return new HttpServletRequestWrapper(request) {
       @Override
       public String getHeader(String name) {
-        if (name.equals("X-Monitoring-Token")) {
+        if ("X-Monitoring-Token".equals(name)) {
           return monitoringToken;
         }
-        if (name.equals("X-Management-Token")) {
+        if ("X-Management-Token".equals(name)) {
           return managementToken;
         }
         return super.getHeader(name);

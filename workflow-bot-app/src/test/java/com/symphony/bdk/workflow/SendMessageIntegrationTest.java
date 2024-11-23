@@ -67,8 +67,8 @@ class SendMessageIntegrationTest extends IntegrationTest {
     assertThat(workflow).isExecuted()
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "sendMessage1"), message)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendMessage1"), message.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendMessage1"), Collections.EMPTY_LIST)
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendMessage1"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendMessage1"), Collections.emptyList())
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendMessage1"), Collections.emptyList());
   }
 
   @Test
@@ -92,8 +92,8 @@ class SendMessageIntegrationTest extends IntegrationTest {
     assertThat(workflow).isExecuted()
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "sendmessageid"), message)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendmessageid"), message.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendmessageid"), Collections.EMPTY_LIST)
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendmessageid"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendmessageid"), Collections.emptyList())
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendmessageid"), Collections.emptyList());
   }
 
   @Test
@@ -122,8 +122,8 @@ class SendMessageIntegrationTest extends IntegrationTest {
     assertThat(workflow).isExecuted()
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "sendMessageWithUserId"), message)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendMessageWithUserId"), message.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendMessageWithUserId"), Collections.EMPTY_LIST)
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendMessageWithUserId"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendMessageWithUserId"), Collections.emptyList())
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendMessageWithUserId"), Collections.emptyList());
   }
 
   @ParameterizedTest
@@ -168,8 +168,8 @@ class SendMessageIntegrationTest extends IntegrationTest {
     assertThat(workflow).isExecuted()
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "sendMessageTemplateWithParams"), message)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendMessageTemplateWithParams"), message.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendMessageTemplateWithParams"), Collections.EMPTY_LIST)
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendMessageTemplateWithParams"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendMessageTemplateWithParams"), Collections.emptyList())
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendMessageTemplateWithParams"), Collections.emptyList());
   }
 
   @Test
@@ -213,9 +213,9 @@ class SendMessageIntegrationTest extends IntegrationTest {
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "forwardProvidedAttachmentInMessageId"), messageToReturn)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "forwardProvidedAttachmentInMessageId"),
             messageToReturn.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "forwardProvidedAttachmentInMessageId"), Collections.EMPTY_LIST)
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "forwardProvidedAttachmentInMessageId"), Collections.emptyList())
         .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "forwardProvidedAttachmentInMessageId"),
-            Collections.EMPTY_LIST);
+        Collections.emptyList());
   }
 
   @Test
@@ -299,8 +299,8 @@ class SendMessageIntegrationTest extends IntegrationTest {
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "forwardMultiple"), messageToReturn)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "forwardMultiple"),
             messageToReturn.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "forwardMultiple"), Collections.EMPTY_LIST)
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "forwardMultiple"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "forwardMultiple"), Collections.emptyList())
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "forwardMultiple"), Collections.emptyList());
   }
 
   @Test
@@ -345,8 +345,8 @@ class SendMessageIntegrationTest extends IntegrationTest {
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "forwardAll"), messageToReturn)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "forwardAll"),
             messageToReturn.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "forwardAll"), Collections.EMPTY_LIST)
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "forwardAll"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "forwardAll"), Collections.emptyList())
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "forwardAll"), Collections.emptyList());
   }
 
   @Test
@@ -377,9 +377,9 @@ class SendMessageIntegrationTest extends IntegrationTest {
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "sendAttachmentFromFileInMessageId"), messageToReturn)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendAttachmentFromFileInMessageId"),
             messageToReturn.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendAttachmentFromFileInMessageId"), Collections.EMPTY_LIST)
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendAttachmentFromFileInMessageId"), Collections.emptyList())
         .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendAttachmentFromFileInMessageId"),
-            Collections.EMPTY_LIST);
+        Collections.emptyList());
   }
 
   @Test
@@ -401,7 +401,7 @@ class SendMessageIntegrationTest extends IntegrationTest {
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendBlastMessageWithStreamIds"), message.getMessageId())
         .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendBlastMessageWithStreamIds"),
             Collections.singletonList(message))
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendBlastMessageWithStreamIds"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendBlastMessageWithStreamIds"), Collections.emptyList());
   }
 
   @Test
@@ -498,7 +498,7 @@ class SendMessageIntegrationTest extends IntegrationTest {
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendBlastMessageWithUserIds"), message.getMessageId())
         .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendBlastMessageWithUserIds"),
             Collections.singletonList(message))
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendBlastMessageWithUserIds"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendBlastMessageWithUserIds"), Collections.emptyList());
   }
 
   @Test
@@ -611,8 +611,8 @@ class SendMessageIntegrationTest extends IntegrationTest {
     assertThat(workflow).isExecuted()
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "sendBlastMessageWithUserIds"), message)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendBlastMessageWithUserIds"), message.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendBlastMessageWithUserIds"), Collections.EMPTY_LIST)
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendBlastMessageWithUserIds"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendBlastMessageWithUserIds"), Collections.emptyList())
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendBlastMessageWithUserIds"), Collections.emptyList());
   }
 
   @ParameterizedTest
@@ -635,8 +635,8 @@ class SendMessageIntegrationTest extends IntegrationTest {
     assertThat(workflow).isExecuted()
         .hasOutput(String.format(OUTPUTS_MSG_KEY, "sendMessageObo"), message)
         .hasOutput(String.format(OUTPUTS_MSG_ID_KEY, "sendMessageObo"), message.getMessageId())
-        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendMessageObo"), Collections.EMPTY_LIST)
-        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendMessageObo"), Collections.EMPTY_LIST);
+        .hasOutput(String.format(OUTPUTS_MESSAGES_KEY, "sendMessageObo"), Collections.emptyList())
+        .hasOutput(String.format(OUTPUTS_FAILED_MESSAGES_KEY, "sendMessageObo"), Collections.emptyList());
   }
 
   @Test

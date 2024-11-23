@@ -41,9 +41,8 @@ class SwadlParserTest {
   void customActivity() throws IOException, ProcessingException {
     Workflow workflow = SwadlParser.fromYaml(getClass().getResourceAsStream("custom-activity.swadl.yaml"));
 
-    assertThat(workflow.getFirstActivity()).hasValueSatisfying(c -> {
-      assertThat(c.getActivity().getVariableProperties().get("my-parameter")).isEqualTo("abc");
-    });
+    assertThat(workflow.getFirstActivity()).hasValueSatisfying(c ->
+      assertThat(c.getActivity().getVariableProperties().get("my-parameter")).isEqualTo("abc"));
   }
 
   @Test

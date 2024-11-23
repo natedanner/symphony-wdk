@@ -366,7 +366,7 @@ public abstract class IntegrationTest {
         .processInstanceId(processId).list();
     if (!processes.isEmpty()) {
       HistoricProcessInstance processInstance = processes.get(0);
-      return processInstance.getState().equals("COMPLETED");
+      return "COMPLETED".equals(processInstance.getState());
     }
     return false;
   }
@@ -447,8 +447,8 @@ public abstract class IntegrationTest {
         .list();
 
     assertThat(processes)
-        .filteredOn(p -> !p.getActivityType().equals("signalStartEvent"))
-        .filteredOn(p -> !p.getActivityType().equals("noneEndEvent"))
+        .filteredOn(p -> !"signalStartEvent".equals(p.getActivityType()))
+        .filteredOn(p -> !"noneEndEvent".equals(p.getActivityType()))
         .extracting(HistoricActivityInstance::getActivityName)
         .containsExactly(activityIds);
   }

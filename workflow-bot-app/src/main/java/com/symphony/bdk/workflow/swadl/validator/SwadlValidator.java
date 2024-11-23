@@ -31,7 +31,7 @@ import java.util.stream.StreamSupport;
  * Validates a SWADL workflow written in YAML.
  */
 @Slf4j
-public class SwadlValidator {
+public final class SwadlValidator {
 
   private static final String JSON_SCHEMA_FILE = "/swadl-schema-1.0.json";
 

@@ -23,7 +23,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 
-public class SwadlParser {
+public final class SwadlParser {
 
   private static final ObjectMapper MAPPER = new ObjectMapper(
       new YAMLFactory().configure(JsonGenerator.Feature.IGNORE_UNKNOWN, true));

@@ -152,7 +152,7 @@ public class WorkflowAssert extends AbstractAssert<WorkflowAssert, Workflow> {
         .processInstanceId(processId).list();
     if (!processes.isEmpty()) {
       HistoricProcessInstance processInstance = processes.get(0);
-      return processInstance.getState().equals("COMPLETED");
+      return "COMPLETED".equals(processInstance.getState());
     }
     return false;
   }
@@ -230,10 +230,9 @@ public class WorkflowAssert extends AbstractAssert<WorkflowAssert, Workflow> {
         -> {
       final List<HistoricDetail> details = IntegrationTest.historyService.createHistoricDetailQuery()
           .processInstanceId(process).list();
-      Optional<HistoricDetail> detail = details.stream()
+      return details.stream()
           .filter(x -> ((HistoricDetailVariableInstanceUpdateEntity) x).getVariableName().equals(key))
           .reduce((first, second) -> second);
-      return detail;
     }, Optional::isPresent);
 
     if (historicalDetailOptional.isEmpty()) {

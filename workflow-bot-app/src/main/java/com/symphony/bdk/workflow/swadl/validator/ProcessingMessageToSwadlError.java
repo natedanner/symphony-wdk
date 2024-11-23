@@ -16,7 +16,7 @@ import java.util.function.Function;
  * JSON schema validation errors that are complex to read.
  */
 @Slf4j
-public class ProcessingMessageToSwadlError {
+public final class ProcessingMessageToSwadlError {
 
   private ProcessingMessageToSwadlError() {
     // utility class
@@ -70,7 +70,7 @@ public class ProcessingMessageToSwadlError {
 
       message = toErrorMessage(mostSpecificError, erroredProperty, errorType, yamlTree, message);
 
-      if (errorType.equals("allOf") || errorType.equals("oneOf")) {
+      if ("allOf".equals(errorType) || "oneOf".equals(errorType)) {
         // this a compound error, try to drill down to find the first one
         message = drillDownReports(message, mostSpecificError, erroredProperty, yamlTree);
       }
@@ -80,24 +80,24 @@ public class ProcessingMessageToSwadlError {
 
   private static String toErrorMessage(JsonNode errorNode, String erroredProperty, String errorType,
       JsonNode yamlTree, String message) {
-    if (errorType.equals("additionalProperties")) {
+    if ("additionalProperties".equals(errorType)) {
       return String.format("Unknown property %s",
           StringUtils.wrapIfMissing(errorNode.at("/unwanted/0").asText(), "'"));
     }
 
-    if (errorType.equals("required")) {
+    if ("required".equals(errorType)) {
       return String.format("Missing property %s for %s object",
           StringUtils.wrapIfMissing(errorNode.at("/missing/0").asText(), "'"),
           erroredProperty);
     }
 
-    if (errorType.equals("pattern")) {
+    if ("pattern".equals(errorType)) {
       return String.format("Invalid property %s, must match pattern %s",
           StringUtils.wrapIfMissing(erroredProperty, "'"),
           errorNode.path("regex").asText());
     }
 
-    if (errorType.equals("type")) {
+    if ("type".equals(errorType)) {
       JsonNode at = yamlTree.at(errorNode.at("/instance/pointer").asText());
       if (at.isTextual()) {
         // in case property is a string instead of an object
@@ -109,7 +109,7 @@ public class ProcessingMessageToSwadlError {
           errorNode.at("/expected/0").asText(), errorNode.at("/found").asText());
     }
 
-    if (errorType.equals("oneOf")) {
+    if ("oneOf".equals(errorType)) {
       JsonNode at = yamlTree.at(errorNode.at("/instance/pointer").asText());
       String property = "";
       if (at.isObject()) {
